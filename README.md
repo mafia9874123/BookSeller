@@ -33,9 +33,9 @@ John is keen to run the site as soon as possible but would like you to think (or
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Explain solution:
 There are 4 REST API method have been implemented following describe:
-- api/Book/CreateOrder
-- api/Book/GetAll
-- api/Book/GetBook/{id}
-- api/Book/Search
+- api/Book/CreateOrder: Method will use to to create a file which is store Order information. File store following format ddMMyyyy_HHmmss.xml in path which is defined in OrderConfiguration/Path (see sample in appsettings.Development.json)
+- api/Book/GetAll: Method will use to to create a file which is store Order information. File store following format ddMMyyyy_HHmmss.xml in path which is defined in OrderConfiguration/Path (see sample in appsettings.Development.json)
+- api/Book/GetBook/{id}: Method will use to to create a file which is store Order information. File store following format ddMMyyyy_HHmmss.xml in path which is defined in OrderConfiguration/Path (see sample in appsettings.Development.json)
+- api/Book/Search: Method will use to to create a file which is store Order information. File store following format ddMMyyyy_HHmmss.xml in path which is defined in OrderConfiguration/Path (see sample in appsettings.Development.json)
 
 Please follow Book.postman_collection.json to have example
