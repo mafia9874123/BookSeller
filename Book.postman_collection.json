@@ -144,6 +144,37 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "GetToken",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzY1MDkyMzQsImlzcyI6IlRlc3RpbmdJc3N1ZXIiLCJhdWQiOiJUZXN0aW5nQXVkaWVuY2UifQ.UtsBaQkqWln6rDBaYXsK3ovHS73m2C730lc3if7F2dU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44387/api/Book/GetToken",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44387",
+					"path": [
+						"api",
+						"Book",
+						"GetToken"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

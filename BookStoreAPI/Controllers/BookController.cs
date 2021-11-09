@@ -25,6 +25,14 @@ namespace BookStoreAPI.Controllers
             _bookOrchestrator = bookOrchestrator;
         }
 
+        [HttpGet("GetToken")]
+        public async Task<IActionResult> GetToken()
+        {
+            var token = new JwtSecurityToken("TestingIssuer", "TestingAudience", null, null, DateTime.Now.AddDays(1),
+                new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("this is my custom Secret key for authnetication")), SecurityAlgorithms.HmacSha256));
+            return Ok(new JwtSecurityTokenHandler().WriteToken(token));
+        }
+
         // GET: api/<BookController>
         [Authorize]
         [HttpGet("GetAll")]
