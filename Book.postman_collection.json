@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "894c682b-e3c7-4215-82f1-e048ba4fa563",
+		"name": "Book",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CreateOrder",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzY1MDkyMzQsImlzcyI6IlRlc3RpbmdJc3N1ZXIiLCJhdWQiOiJUZXN0aW5nQXVkaWVuY2UifQ.UtsBaQkqWln6rDBaYXsK3ovHS73m2C730lc3if7F2dU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ISBNCode\":\"2\",\r\n    \"StoreID\":\"3\",\r\n    \"ContactEmail\":\"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44387/api/Book/CreateOrder",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44387",
+					"path": [
+						"api",
+						"Book",
+						"CreateOrder"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzY1MDkyMzQsImlzcyI6IlRlc3RpbmdJc3N1ZXIiLCJhdWQiOiJUZXN0aW5nQXVkaWVuY2UifQ.UtsBaQkqWln6rDBaYXsK3ovHS73m2C730lc3if7F2dU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44387/api/Book/GetAll",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44387",
+					"path": [
+						"api",
+						"Book",
+						"GetAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzY1MDkyMzQsImlzcyI6IlRlc3RpbmdJc3N1ZXIiLCJhdWQiOiJUZXN0aW5nQXVkaWVuY2UifQ.UtsBaQkqWln6rDBaYXsK3ovHS73m2C730lc3if7F2dU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44387/api/Book/GetBook/Book2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44387",
+					"path": [
+						"api",
+						"Book",
+						"GetBook",
+						"Book2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MzY1MDkyMzQsImlzcyI6IlRlc3RpbmdJc3N1ZXIiLCJhdWQiOiJUZXN0aW5nQXVkaWVuY2UifQ.UtsBaQkqWln6rDBaYXsK3ovHS73m2C730lc3if7F2dU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44387/api/Book/Search?searchString=2",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44387",
+					"path": [
+						"api",
+						"Book",
+						"Search"
+					],
+					"query": [
+						{
+							"key": "searchString",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
