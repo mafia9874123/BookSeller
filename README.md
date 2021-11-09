@@ -33,9 +33,11 @@ John is keen to run the site as soon as possible but would like you to think (or
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Explain solution:
 There are 4 REST API method have been implemented following describe:
-- api/Book/CreateOrder: Method will use to to create a file which is store Order information. File store following format ddMMyyyy_HHmmss.xml in path which is defined in OrderConfiguration/Path (see sample in appsettings.Development.json)
-- api/Book/GetAll: Method will use to to create a file which is store Order information. File store following format ddMMyyyy_HHmmss.xml in path which is defined in OrderConfiguration/Path (see sample in appsettings.Development.json)
-- api/Book/GetBook/{id}: Method will use to to create a file which is store Order information. File store following format ddMMyyyy_HHmmss.xml in path which is defined in OrderConfiguration/Path (see sample in appsettings.Development.json)
-- api/Book/Search: Method will use to to create a file which is store Order information. File store following format ddMMyyyy_HHmmss.xml in path which is defined in OrderConfiguration/Path (see sample in appsettings.Development.json)
+- api/Book/CreateOrder: Method will use to create a file which is store Order information. File store following format ddMMyyyy_HHmmss.xml in path which is defined in OrderConfiguration/Path (see sample in appsettings.Development.json)
+- api/Book/GetAll: Method will use to get all available Book in 2 Store. Path save Book files is defined in StoreConfiguration (see sample in appsettings.Development.json)
+- api/Book/GetBook/{id}: Method will use to get specific book which have ISBN Code equal with {id}.
+- api/Book/Search: Method will use to find a book by containing string (ISBN Code, Name, Author). 
 
-Please follow Book.postman_collection.json to have example
+4 methods have been Authorized, to get token please use api/Book/GetToken. 
+
+Please import Book.postman_collection.json to have example.
