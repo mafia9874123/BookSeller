@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BookStoreAPI.Extensions;
 using BookStoreAPI.Orchestrations;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -29,10 +30,13 @@ namespace BookStoreAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            services.AddControllers().AddNewtonsoftJson(options =>
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            ); 
             services.AddOrchestrators();
             services.AddConfigurations(Configuration);
             services.AddHttpContextAccessor();
+            services.AddSwaggerExtension();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(option =>
             {
                 option.RequireHttpsMetadata = false;
@@ -62,6 +66,8 @@ namespace BookStoreAPI
             app.UseRouting();
 
             app.UseAuthentication();
+
+            app.UseSwaggerExtension();
 
             app.UseAuthorization();
 
