@@ -40,4 +40,6 @@ There are 4 REST API method have been implemented following describe:
 
 4 methods have been Authorized, to get token please use api/Book/GetToken. 
 
+BookTesting project is used to perform test for 4 maindatory method
+
 Please import Book.postman_collection.json to have example.
