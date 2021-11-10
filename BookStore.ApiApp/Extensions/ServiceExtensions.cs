@@ -1,5 +1,6 @@
-﻿using BookStoreAPI.Configurations;
-using BookStoreAPI.Orchestrations;
+﻿using BookStore.Services.Interfaces;
+using BookStore.Services.Services;
+using BookStoreAPI.Configurations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -14,7 +15,7 @@ namespace BookStoreAPI
     {
         public static IServiceCollection AddOrchestrators(this IServiceCollection serviceCollection)
         {
-            serviceCollection.AddScoped(typeof(BookOrchestrator));
+            serviceCollection.AddScoped(typeof(IBookService), typeof(BookService));
             return serviceCollection;
         }
 

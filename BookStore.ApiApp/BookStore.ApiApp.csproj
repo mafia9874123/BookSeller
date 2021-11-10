@@ -14,7 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BookStore.Application\BookStore.Application.csproj" />
+    <ProjectReference Include="..\BookStore.Application\BookStore.Common.csproj" />
+    <ProjectReference Include="..\BookStore.Services\BookStore.Services.csproj" />
     <ProjectReference Include="..\BookStore.Shared\BookStore.Shared.csproj" />
   </ItemGroup>
 

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using BookStoreAPI.Orchestrations;
+using BookStore.Services.Interfaces;
 using Lib.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -19,10 +19,10 @@ namespace BookStoreAPI.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly BookOrchestrator _bookOrchestrator;
-        public BookController(BookOrchestrator bookOrchestrator)
+        private readonly IBookService _bookService;
+        public BookController(IBookService bookService)
         {
-            _bookOrchestrator = bookOrchestrator;
+            _bookService = bookService;
         }
 
         [HttpGet("GetToken")]
@@ -38,7 +38,7 @@ namespace BookStoreAPI.Controllers
         [HttpGet("GetAll")]
         public async Task<IActionResult> Get()
         {
-            var message = await _bookOrchestrator.GetAllBook();
+            var message = await _bookService.GetAllBook();
             return Ok(message);
         }
 
@@ -47,7 +47,7 @@ namespace BookStoreAPI.Controllers
         [HttpGet("GetBook/{id}")]
         public async Task<IActionResult> GetByID(string id)
         {
-            var message = await _bookOrchestrator.GetBook(id);
+            var message = await _bookService.GetBook(id);
             return Ok(message);
         }
 
@@ -56,7 +56,7 @@ namespace BookStoreAPI.Controllers
         [HttpPost("CreateOrder")]
         public async Task<IActionResult> Post([FromBody] Order order, CancellationToken token)
         {
-            var message = _bookOrchestrator.CreateOrder(order, token);
+            var message = _bookService.CreateOrder(order, token);
             return Ok(message);
         }
 
@@ -65,7 +65,7 @@ namespace BookStoreAPI.Controllers
         [HttpGet("Search")]
         public async Task<IActionResult> SearchBook(string searchString)
         {
-            var message = await _bookOrchestrator.SearchtBook(searchString);
+            var message = await _bookService.SearchtBook(searchString);
             return Ok(message);
         }
     }

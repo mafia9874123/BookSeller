@@ -1,0 +1,11 @@
+<Book>
+	<Name>Book2</Name>
+	<Author>Book2</Author>
+	<ISBNCode>Book2</ISBNCode>
+	<Quantity>
+		1
+	</Quantity>
+	<Price>
+		123
+	</Price>
+</Book>

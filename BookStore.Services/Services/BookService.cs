@@ -1,5 +1,5 @@
-﻿using BookStoreAPI.Configurations;
-using BookStoreAPI.Models;
+﻿using BookStore.Services.Interfaces;
+using BookStoreAPI.Configurations;
 using Lib.Helper;
 using Lib.Models;
 using Microsoft.Extensions.Options;
@@ -8,16 +8,17 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace BookStoreAPI.Orchestrations
+namespace BookStore.Services.Services
 {
-    public class BookOrchestrator
+    public class BookService : IBookService
     {
         private readonly IOptions<OrderConfiguration> _orderConfiguration;
         private readonly IOptions<StoreConfiguration> _storeConfiguration;
-        public BookOrchestrator(IOptions<OrderConfiguration> orderConfiguration, IOptions<StoreConfiguration> storeConfiguration)
+        public BookService(IOptions<OrderConfiguration> orderConfiguration, IOptions<StoreConfiguration> storeConfiguration)
         {
             _orderConfiguration = orderConfiguration;
             _storeConfiguration = storeConfiguration;
@@ -66,7 +67,7 @@ namespace BookStoreAPI.Orchestrations
                     {
                         ISBNCode = book.ISBNCode,
                         Author = book.Author,
-                        BookName= book.Name,
+                        BookName = book.Name,
                         Store = new StoreModel
                         {
                             StoreID = "IDStoreA",
@@ -113,7 +114,7 @@ namespace BookStoreAPI.Orchestrations
             {
                 string contents = File.ReadAllText(c);
                 var book = XmlHelper.DeserializeXmlFileToObject<Book>(contents);
-                if (book.Name.Contains(searchString)|| book.ISBNCode.Contains(searchString)|| book.Author.Contains(searchString))
+                if (book.Name.Contains(searchString) || book.ISBNCode.Contains(searchString) || book.Author.Contains(searchString))
                 {
                     listBook.Add(book);
                 }
